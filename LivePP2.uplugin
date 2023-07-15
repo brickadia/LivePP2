@@ -1,0 +1,32 @@
+{
+  "FileVersion": 3,
+  "Version": 0,
+  "VersionName": "1.0",
+  "FriendlyName": "Live++ 2 Integration",
+  "Description": "Integrates Live++ 2. Manual setup required.",
+  "Category": "Programming",
+  "CreatedBy": "Brickadia, LLC",
+  "CreatedByURL": "https://brickadia.com/",
+  "DocsURL": "https://liveplusplus.tech/docs/documentation.html",
+  "SupportURL": "https://github.com/brickadia/LivePP2/issues",
+  "EngineVersion": "5.2.0",
+  "EnabledByDefault": false,
+  "CanContainContent": false,
+  "IsBetaVersion": false,
+  "Installed": false,
+  "Modules": [
+    {
+      "Name": "LivePP2",
+      "Type": "RuntimeNoCommandlet",
+      "LoadingPhase": "PostEngineInit",
+      "WhitelistPlatforms": [
+        "Win64"
+      ],
+      "WhitelistTargetConfigurations": [
+        "Debug",
+        "DebugGame",
+        "Development"
+      ]
+    }
+  ]
+}
