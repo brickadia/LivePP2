@@ -60,6 +60,13 @@ void FLivePP2Module::StartupModule()
 			{
 				GSynchronizedAgent.CompileAndReloadChanges(lpp::LPP_RELOAD_BEHAVIOUR_WAIT_UNTIL_CHANGES_ARE_APPLIED);
 			}
+
+			if (GSynchronizedAgent.WantsRestart())
+			{
+				// The others don't seem to work. We would need to advance a frame to handle graceful termination,
+				// but this function doesn't return until the process is terminated.
+				GSynchronizedAgent.Restart(lpp::LPP_RESTART_BEHAVIOUR_INSTANT_TERMINATION, 0);
+			}
 		}
 	);
 }
