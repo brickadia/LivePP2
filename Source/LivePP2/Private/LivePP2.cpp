@@ -9,6 +9,7 @@ THIRD_PARTY_INCLUDES_START
 #include "Windows/HideWindowsPlatformTypes.h"
 THIRD_PARTY_INCLUDES_END
 
+lpp::LppProjectPreferences GAgentPreferences;
 lpp::LppSynchronizedAgent GSynchronizedAgent;
 
 void FLivePP2Module::StartupModule()
@@ -22,7 +23,11 @@ void FLivePP2Module::StartupModule()
 	FString BaseDir = IPluginManager::Get().FindPlugin("LivePP2")->GetBaseDir();
 	FString AgentPath = FPaths::Combine(*BaseDir, TEXT("Source/ThirdParty/LivePPSDK/LivePP"));
 
-	GSynchronizedAgent = lpp::LppCreateSynchronizedAgent(*AgentPath);
+	GAgentPreferences = lpp::LppCreateDefaultProjectPreferences();
+	GAgentPreferences.compiler.removeShowIncludes = true;
+	GAgentPreferences.compiler.removeSourceDependencies = true;
+
+	GSynchronizedAgent = LppCreateSynchronizedAgentWithPreferences(*AgentPath, &GAgentPreferences);
 	check(lpp::LppIsValidSynchronizedAgent(&GSynchronizedAgent));
 
 	if constexpr (WITH_EDITOR)

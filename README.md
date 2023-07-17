@@ -6,6 +6,9 @@ This is much faster to iterate with than the default Live++ integration, but it 
 # Supported Platforms
 The plugin will work in the editor aswell as packaged builds in Debug, DebugGame and Development config. I only implemented support for Windows.
 
+# Compatibility Notice
+You must use Live++ version >= 2.2.2 due to an incompatibility with the Unity Splitting feature. UBT passes the `/sourceDependencies` command line argument to MSVC to generate metadata about includes of each cpp. If this argument is not removed during hot reload, Unity Splitting will cause the metadata to get overwritten with a random file from inside the module, resulting in UBT no longer compiling the unity file on changes to the inner files.
+
 # Installation
 1) Install this plugin to your project.
 2) Download the official Live++ [release](https://liveplusplus.tech/releases.html) and place the `LivePP` folder next to the `PLACE_LIVEPP_FOLDER_HERE` file in `Source/ThirdParty/LivePPSDK`.
