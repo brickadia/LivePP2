@@ -26,6 +26,7 @@ void FLivePP2Module::StartupModule()
 	GAgentPreferences = lpp::LppCreateDefaultProjectPreferences();
 	GAgentPreferences.compiler.removeShowIncludes = true;
 	GAgentPreferences.compiler.removeSourceDependencies = true;
+	GAgentPreferences.exceptionHandler.isEnabled = false;
 
 	GSynchronizedAgent = LppCreateSynchronizedAgentWithPreferences(*AgentPath, &GAgentPreferences);
 	check(lpp::LppIsValidSynchronizedAgent(&GSynchronizedAgent));
