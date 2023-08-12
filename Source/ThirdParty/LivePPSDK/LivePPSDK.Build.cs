@@ -13,7 +13,7 @@ public class LivePPSDK : ModuleRules
 		if (Target.Platform == UnrealTargetPlatform.Win64)
 		{
 			string SdkPath = Path.GetFullPath(Path.Combine(ModuleDirectory, "LivePP"));
-            PublicSystemIncludePaths.Add(Path.Combine(SdkPath, "API"));
+            PublicSystemIncludePaths.Add(Path.Combine(SdkPath, "API", "x64"));
             
             Directory.GetFiles(Path.Combine(SdkPath, "Agent", "x64"), "*", SearchOption.AllDirectories).ToList().ForEach(File => RuntimeDependencies.Add(File));
             Directory.GetFiles(Path.Combine(SdkPath, "Broker"), "*", SearchOption.AllDirectories).ToList().ForEach(File => RuntimeDependencies.Add(File));
