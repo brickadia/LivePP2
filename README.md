@@ -7,7 +7,7 @@ This is much faster to iterate with than the default Live++ integration, but it 
 The plugin will work in the editor aswell as packaged builds in Debug, DebugGame and Development config. I only implemented support for Windows.
 
 # Supported Live++ Versions
-You must use Live++ version >= 2.3.0 due to breaking API changes.
+You must use Live++ version >= 2.4.0 due to breaking API changes.
 
 # Unity Splitting Compatibility
 If you intend to reload modules that use the `UE_INLINE_GENERATED_CPP_BY_NAME` macro (such as any engine modules), you need to make a small change to UBT. The `.gen.cpp` files that are included by the macro are often not capable of compiling on their own, but due to ending in `.cpp`, Live++ will attempt to apply Unity Splitting to them. To fix this, use find/replace to change `.gen.cpp` to `.gen.hpp` in `Engine/Source/Programs/Shared/*`, `Engine/Source/Programs/UnrealBuildTool/*` and `ObjectMacros.h`. After a rebuild, everything will work as it used to, except the files no longer get split out on hot reload.

@@ -65,9 +65,9 @@ void FLivePP2Module::StartupModule()
 	// Bind reload delegate.
 	OnEndFrameHandle = FCoreDelegates::OnEndFrame.AddLambda(
 		[]{
-			if (GSynchronizedAgent.WantsReload())
+			if (GSynchronizedAgent.WantsReload(lpp::LPP_RELOAD_OPTION_SYNCHRONIZE_WITH_RELOAD))
 			{
-				GSynchronizedAgent.CompileAndReloadChanges(lpp::LPP_RELOAD_BEHAVIOUR_WAIT_UNTIL_CHANGES_ARE_APPLIED);
+				GSynchronizedAgent.Reload(lpp::LPP_RELOAD_BEHAVIOUR_WAIT_UNTIL_CHANGES_ARE_APPLIED);
 			}
 
 			if (GSynchronizedAgent.WantsRestart())
