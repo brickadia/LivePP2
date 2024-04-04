@@ -1,11 +1,18 @@
 // Copyright Brickadia, LLC. All Rights Reserved.
 
 #include "LivePP2.h"
+
+#include "HAL/PlatformProcess.h"
 #include "Interfaces/IPluginManager.h"
+#include "Misc/CommandLine.h"
+#include "Misc/CoreDelegates.h"
+#include "Misc/Paths.h"
 
 THIRD_PARTY_INCLUDES_START
-#include "Windows/AllowWindowsPlatformTypes.h"
+#include "Windows/MinWindows.h"
+#define _INC_WINDOWS
 #include "LPP_API_x64_CPP.h"
+#include "Windows/AllowWindowsPlatformTypes.h"
 #include "Windows/HideWindowsPlatformTypes.h"
 THIRD_PARTY_INCLUDES_END
 
