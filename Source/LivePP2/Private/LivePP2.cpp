@@ -9,10 +9,8 @@
 #include "Misc/Paths.h"
 
 THIRD_PARTY_INCLUDES_START
-#include "Windows/MinWindows.h"
-#define _INC_WINDOWS
-#include "LPP_API_x64_CPP.h"
 #include "Windows/AllowWindowsPlatformTypes.h"
+#include "LPP_API_x64_CPP.h"
 #include "Windows/HideWindowsPlatformTypes.h"
 THIRD_PARTY_INCLUDES_END
 
