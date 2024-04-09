@@ -1,7 +1,12 @@
 // Copyright Brickadia, LLC. All Rights Reserved.
 
 #include "LivePP2.h"
+
+#include "HAL/PlatformProcess.h"
 #include "Interfaces/IPluginManager.h"
+#include "Misc/CommandLine.h"
+#include "Misc/CoreDelegates.h"
+#include "Misc/Paths.h"
 
 THIRD_PARTY_INCLUDES_START
 #include "Windows/AllowWindowsPlatformTypes.h"
