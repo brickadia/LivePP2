@@ -32,6 +32,7 @@ void FLivePP2Module::StartupModule()
 	GLocalPreferences = lpp::LppCreateDefaultLocalPreferences();
 
 	GAgentPreferences = lpp::LppCreateDefaultProjectPreferences();
+	GAgentPreferences.hotReload.sourcePathFilters = ".gen.cpp";
 	GAgentPreferences.compiler.removeShowIncludes = true;
 	GAgentPreferences.compiler.removeSourceDependencies = true;
 	GAgentPreferences.exceptionHandler.isEnabled = false;
