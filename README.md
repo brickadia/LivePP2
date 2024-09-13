@@ -7,7 +7,7 @@ This is much faster to iterate with than the default Live++ integration, but it 
 The plugin will work in the editor aswell as packaged builds in Debug, DebugGame and Development config. I only implemented support for Windows.
 
 # Supported Live++ Versions
-You must use Live++ version >= 2.5.2 for unity splitting compatibility.
+You must use Live++ version >= 2.7.0 due to breaking API changes.
 
 # Installation
 1) Install this plugin to your project.

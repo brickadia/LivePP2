@@ -80,7 +80,7 @@ void FLivePP2Module::StartupModule()
 			{
 				// The others don't seem to work. We would need to advance a frame to handle graceful termination,
 				// but this function doesn't return until the process is terminated.
-				GSynchronizedAgent.Restart(lpp::LPP_RESTART_BEHAVIOUR_INSTANT_TERMINATION, 0);
+				GSynchronizedAgent.Restart(lpp::LPP_RESTART_BEHAVIOUR_INSTANT_TERMINATION, 0, nullptr);
 			}
 		}
 	);
